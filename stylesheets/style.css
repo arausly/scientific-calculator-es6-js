@@ -1,0 +1,61 @@
+/* line 9, ../sass/style.scss */
+.card {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+/* line 13, ../sass/style.scss */
+.display {
+  height: 200px;
+  width: 100%;
+  border: 1px solid #010101;
+  position: relative;
+}
+
+/* line 19, ../sass/style.scss */
+.operands, .operator, .side-bar {
+  margin: 0;
+  padding: 0;
+  border-radius: initial;
+  font-size: 2rem;
+  width: 100%;
+  border: 1px solid #000000;
+  padding-left: 25px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+/* line 34, ../sass/style.scss */
+#result {
+  position: absolute;
+  font-size: 8rem;
+  right: 7px;
+  bottom: 2px;
+  font-weight: 400;
+}
+
+/* line 42, ../sass/style.scss */
+.operands input, .operator input, .operator button, .side-bar input, .side-bar button {
+  height: 4rem;
+  width: 10rem;
+  margin: 0;
+}
+
+/* line 47, ../sass/style.scss */
+.operands {
+  height: 200px;
+  width: 100%;
+}
+
+/* line 55, ../sass/style.scss */
+.operator {
+  height: 200px;
+  width: 100%;
+}
+
+/* line 66, ../sass/style.scss */
+.side-bar {
+  height: 200px;
+  width: 100%;
+}
