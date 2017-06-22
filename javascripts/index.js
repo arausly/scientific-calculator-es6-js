@@ -1,4 +1,4 @@
-let btns,btn,store = [0],operandA =[],operandB = [],operator = [];
+let btns,btn,store = [0],operandA =[],operators = [],memory= [];
 
 btns = Array.prototype.slice.call(document.querySelectorAll('.btn'));  // this has various implementations for different browsers.
 
@@ -8,7 +8,7 @@ const btnLogic = (button) =>{
 	button.addEventListener('click',(e)=>{
 		e = e === undefined ? window.event : e;
 		e.preventDefault();
-		store.push()
+		let operandAInit = operandA.length;
 		if(btnVal === null || btnVal === undefined){
 			//console.log(button.innerHTML);
 		}else{
@@ -16,34 +16,46 @@ const btnLogic = (button) =>{
 			let numBtnVal = Number(btnVal);
 			if(Number.isFinite(numBtnVal) && Number.isSafeInteger(numBtnVal)){
 				operandA.push(numBtnVal);
-
 				console.log(operandA.length);
 				console.log(operandA);
 			}else if(!Number.isFinite(numBtnVal)){
-				operator.push(btnVal);
-				console.log(operator.length);
-				if(operator.length === 1){
-					let operandAInit = operandA.length;
-					if(operandAInit){
-						switch(operator[0]){
-							case 'Del':
-								operandA.pop(operandAInit -1);
-								console.log(operandA);
-								break;
-							default:
-								console.log('Some default');
-								break;	
-						}
-					}else if(!operandAInit){
-						operandA.splice(operandAInit - 1);
-						operandB.push(btnVal);
-						console.log(operandB.length);
+				operators.push(btnVal);
+				console.log(operators.length);
+				//				console.log(operators);
+				//use last value of array e.g (sameOperator[sameOperator.length - 1] === "Del") ?
+				let sameOperator = operators.filter((operator)=> operator === "Del");
+				if(sameOperator.length !== 0){
+					switch(operators[0]){
+						case 'Del':
+							operandA.pop(operandAInit -1);
+							console.log(operandA);
+							break;
+						default:
+							console.log('Some default');
+							break;	
+					} 
+
+				}
+				let getDiffOperator = operators.filter((operator)=> operator !=="Del");
+				if(getDiffOperator !== 0){
+					switch(getDiffOperator[0]){
+						case "+":
+							let fstOperand = Number(operandA.join('')); 
+							console.log('expecting second operand');  
+							memory.push(fstOperand);
+							operandA.splice(0);
+							let sndOperand = Number(operandA.join(''));
+							console.log(sndOperand);
+							console.log(memory[0]+ sndOperand);
+						break; 
 					}
 				}
 			}
 		}
-	}); 
+	});
 }
+
+
 
 // const block						
 
