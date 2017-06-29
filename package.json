@@ -1,9 +1,14 @@
 {
-  "name": "swifta's website",
+  "name": "Es6",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "babel":{
+  "scripts": {
+    "test": "mocha **/*.test.js",
+    "auto-test": " nodemon --exec \" npm test \"",
+    "auto-b": "webpack -w"
+  },
+  "babel": {
     "presets": [
       "es2015",
       "es2016"
@@ -12,14 +17,18 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "babel-core": "^6.24.1",
     "babel-loader": "^6.4.1",
     "babel-polyfill": "^6.23.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-es2016": "^6.24.1",
     "babel-preset-react": "^6.24.1",
-    "webpack": "^2.3.3",
-    "webpack-dev-server": "^2.4.2"
+    "webpack": "^2.3.3"
+  },
+  "devDependencies": {
+    "chai": "^4.0.2",
+    "expect": "^1.20.2",
+    "mocha": "^3.4.2"
   }
 }
